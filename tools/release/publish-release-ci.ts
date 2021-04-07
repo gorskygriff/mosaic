@@ -126,7 +126,7 @@ class PublishReleaseCITask extends BaseReleaseTask {
             Authorization: `token ${CONFIG.github.token}`
         };
 
-        const branchName = this.git.getCurrentBranch();
+        const branchName = process.env.CIRCLE_BRANCH;
 
         const body = {
             tag_name: options.tagName,

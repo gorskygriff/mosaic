@@ -78,6 +78,7 @@ jobs:
             - checkout
             - *restore_cache
             - run: yarn install --frozen-lockfile --non-interactive
+            - run: echo ${CIRCLE_BRANCH}
             - save_cache:
                   key: *cache_key
                   paths:
